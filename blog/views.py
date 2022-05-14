@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView  # new
 from django.urls import reverse_lazy
+from django.views import generic
+from django.contrib.auth.forms import UserCreationForm
 
 from .models import *
 
@@ -23,6 +25,7 @@ class BlogUpdateView(UpdateView):
     model = Post
     template_name = 'post_edit.html'
     fields = ['title', 'body']
+
 
 class BlogDeleteView(DeleteView):
     model = Post
